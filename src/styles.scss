@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.slot-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.slot-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.slot-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

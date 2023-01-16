@@ -1,0 +1,75 @@
+<h3>Pipes</h3>
+
+<div class="pipes">
+  <div *ngFor="let pipe of pipes" class="pipe">
+    <div>
+      <div class="pipe-name">{{pipe.title}}</div>
+      <div class="pipe-count">{{pipe.coinCount}}</div>
+    </div>
+    <div class="pipe-container">
+      <div class="used-coin">
+        <div *ngFor="let item of [].constructor(pipe.coinCount); let i = index" class="pipe-level with-coin"></div>
+      </div>
+      <div class="available-coins">
+        <div *ngFor="let item of [].constructor(10); let i = index" class="pipe-level"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Stuffs</h2>
+
+<section>
+  <div class="slot-label"><b>Current balance: </b><span><b>{{balance}} Ft</b></span></div>
+</section>
+
+<section>
+  <div class="slot-label">Available amount: <span>{{currentAmount}} Ft</span></div>
+</section>
+
+<section>
+  <div class="slot-label">Selected stuff: <span>{{currentSelectedRow?.name || "No selected Item"}}</span></div>
+</section>
+
+<section>
+  <div class="slot-label">Change: <span>{{change}} Ft</span></div>
+</section>
+<br/>
+<section>
+  <div class="mat-elevation-z8">
+    <table [dataSource]="dataSource" class="stuff-table" mat-table>
+
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> ID</th>
+        <td *matCellDef="let row" mat-cell> {{row.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Name</th>
+        <td *matCellDef="let row" mat-cell> {{row.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Price</th>
+        <td *matCellDef="let row" mat-cell> {{row.price}} </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr
+        (click)="clickRow(row)"
+        *matRowDef="let row; columns: displayedColumns;"
+        [class.stuff-row-is-clicked]="clickedRows.has(row)"
+        mat-row>
+      </tr>
+
+    </table>
+
+  </div>
+</section>
+<br/>
+<section>
+  <div class="slot-button-row">
+    <button (click)="clickNext($event)" color="primary" mat-raised-button>Next</button>
+    <button (click)="clickCancel($event)" color="warn" mat-raised-button>Back</button>
+  </div>
+</section>

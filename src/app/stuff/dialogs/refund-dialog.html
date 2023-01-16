@@ -1,0 +1,6 @@
+<h1>Refund</h1>
+<div *ngIf="refund > 0" mat-dialog-content>Your refund: {{refund}}</div>
+<div *ngIf="refund == 0" mat-dialog-content>No refunds. By {{refund}}</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Ok</button>
+</div>

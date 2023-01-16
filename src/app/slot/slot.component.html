@@ -1,0 +1,70 @@
+<section>
+  <div class="card-container">
+    <div class="card">
+      <div class="slot-label amount-container">Your amount: <span
+        [class]="insertedMoney? 'amount' : ''">{{amount}}</span> Ft
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="slot-button-row">
+    <div class="slot-flex-container">
+
+      <div class="slot-button-container">
+        <button class="ft_5" (click)="clickInsertMoney($event, 'coin', 5)" aria-label="" color="accent" mat-mini-fab>
+          5Ft
+        </button>
+      </div>
+
+      <div class="slot-button-container">
+        <button class="ft_10" (click)="clickInsertMoney($event, 'coin', 10)" aria-label="" color="accent" mat-mini-fab>
+          10Ft
+        </button>
+      </div>
+
+      <div class="slot-button-container">
+        <button class="ft_20" (click)="clickInsertMoney($event, 'coin',20)" aria-label="" color="accent" mat-mini-fab>
+          20Ft
+        </button>
+      </div>
+
+      <div class="slot-button-container">
+        <button class="ft_50" (click)="clickInsertMoney($event, 'coin', 50)" aria-label="" color="accent" mat-mini-fab>
+          50Ft
+        </button>
+      </div>
+
+      <div class="slot-button-container">
+        <button class="ft_100" (click)="clickInsertMoney($event, 'coin', 100)" aria-label="" color="accent"
+                mat-mini-fab>
+          100Ft
+        </button>
+      </div>
+
+      <div class="slot-button-container">
+        <button class="ft_200" (click)="clickInsertMoney($event, 'coin',200)" aria-label="" color="accent" mat-mini-fab>
+          200Ft
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section>
+  <div class="slot-button-row">
+    <div class="slot-flex-container">
+      <button class="bill ft_500" mat-raised-button (click)="clickInsertMoney($event, 'bill', 500)">500Ft</button>
+      <button class="bill ft_1000" mat-raised-button (click)="clickInsertMoney($event, 'bill', 1000)">1000Ft</button>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="slot-button-row">
+    <button (click)="clickNext($event)" color="primary" mat-raised-button>Next</button>
+    <button (click)="clickReset($event)" color="warn" mat-raised-button>Reset</button>
+  </div>
+</section>

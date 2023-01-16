@@ -1,0 +1,80 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.stuff-row-is-clicked {
+  font-weight: bold;
+}
+
+td, th {
+  width: 25%;
+}
+
+.pipes {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+
+  .pipe {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .pipe-container {
+      position: relative;
+
+      .used-coin {
+        position: relative;
+        z-index: 1;
+      }
+
+      .available-coins {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .pipe-name {
+      text-align: center;
+    }
+
+    .pipe-count {
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .pipe-level {
+      text-align: center;
+      width: 50%;
+      height: 10px;
+      background-color: darkgray;
+      margin-bottom: 5px;
+      margin-left: 25%;
+
+      &.with-coin {
+        background-color: #ffd740;
+      }
+    }
+  }
+}
+
